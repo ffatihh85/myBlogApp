@@ -1,0 +1,77 @@
+<%- include ("../partials/header") %>
+  
+<!-- <style>
+  .masthead {
+   height:  30vh;
+   min-height: 10px;  
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;     
+ }
+ .font-weight-light
+ {
+       color: white;      
+   }
+   .lead{
+       color: white;
+   }
+   </style>
+ 
+ <header class="masthead" style="background-image:url('https://images.unsplash.com/photo-1587793924058-30fa676b5fc4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80');">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-12 text-center">
+       
+        <h1 class="font-weight-light"> <strong> Admin Dashbord </strong></h1>
+        <p class="lead">This is what I do.</p>
+       
+      </div>
+    </div>
+  </div>
+</header>  -->
+
+<!-- Page Header -->
+  <header class="masthead" style="background-image: url('https://images.unsplash.com/photo-1587793924058-30fa676b5fc4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>Admin Dashbord</h1>
+            <span class="subheading">This is what I do.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header> 
+
+  <div class="container">
+    <% adminActions.forEach((action) =>{  %>   
+        <div class="row">  
+            <div class="col-lg-4 mx-auto">    
+                <button onclick="catchId(this.id)" type="button" id="<%= action.actionId %>" class="btn btn-outline-primary btn-block float-left"> <%= action.displayName %>  </button>
+            </div>     
+            <div class="col-lg-8 mx-auto">                 
+            </div>    
+        </div>    
+    <% }); %>
+  </div>
+
+  <script>
+
+      function catchId(clickedId)
+      {
+
+          if(clickedId == 1)
+          {
+            window.location.href = ""; return false;
+          }
+          else if(clickedId == 4)
+          {
+            window.location.href = "addNewBlog"; return false;
+          }
+      }
+    
+  </script>
+
+<%- include ("../partials/footer") %>
